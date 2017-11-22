@@ -41,12 +41,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  */
 public class MysqlGenerator_bjui {
 
-	private static final String[] TABLES = new String[] {"sys_menu",
-			"sys_menu_role",
-			"sys_organization",
-			"sys_role",
-			"sys_role_user",
-			"sys_user"};
+	private static final String[] TABLES = new String[] {};
 	private static final String AUTHOR = "wujing";
 
 	// 包的根路径设置
