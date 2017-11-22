@@ -4,10 +4,14 @@
 #set($bg='${bean.')
 #set($ed='}')
 #foreach($field in ${table.fields})
+#if(${field.keyIdentityFlag})
+## 主键不生成
+#elseif(${field.convert})
 		<div class="form-group">
             <label class="control-label x85">${field.comment}：</label>
             <input type="text" name="${field.propertyName}" value="" placeholder="${field.comment}" size="20">
         </div>
+#end
 #end
 	</form>
 </div>

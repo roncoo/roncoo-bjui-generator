@@ -62,9 +62,6 @@ public class MysqlGenerator_plus {
 	private static final String DB_USER_NAME = "root";
 	private static final String DB_PASSWORD = "";
 	private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/rc_os_user?characterEncoding=utf8";
-	// private static final String DB_PASSWORD = "www.roncoo.com";
-	// private static final String DB_URL =
-	// "jdbc:mysql://192.168.1.215:3306/roncoo_college_boss?characterEncoding=utf8";
 
 	/**
 	 * 代码生成
