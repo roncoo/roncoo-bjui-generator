@@ -34,16 +34,16 @@
         <table class="list" width="100%" targetType="navTab" asc="asc" desc="desc" layoutH="116">
             <thead>
                 <tr>
-                <th width="30">序号</th>
+                    <th width="30">序号</th>
 #foreach($field in ${table.fields})
 #if(${field.keyIdentityFlag})
 ## 主键不生成
 #elseif(${field.convert})
-                <th>${field.comment}</th>
+                    <th>${field.comment}</th>
 #end
 #end
-                <th>操作</th>
-            </tr>
+                    <th>操作</th>
+                </tr>
             </thead>
             <tbody>
                 <\#if page??>
