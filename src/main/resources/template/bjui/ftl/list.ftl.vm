@@ -42,7 +42,7 @@
 #if(${field.keyIdentityFlag})
 ## 主键不生成
 #elseif(${field.convert})
-				<td>${bg}${field.propertyName}${ed}</td>
+				<td>${bg}${field.propertyName}${ed}!</td>
 #end
 #end
 				<td>

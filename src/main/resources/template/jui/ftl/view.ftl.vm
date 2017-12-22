@@ -9,7 +9,7 @@
 ## 主键不生成
 #elseif(${field.convert})
         <p>
-            <label>${field.comment}：</label>${bg}${keyPropertyName}${ed}
+            <label>${field.comment}：</label>${bg}${keyPropertyName}${ed}!
         </p>
 #end
 #end

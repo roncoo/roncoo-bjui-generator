@@ -11,7 +11,7 @@
 #elseif(${field.convert})
 		<div class="form-group">
             <label class="control-label x85">${field.comment}：</label>
-            <input type="text" name="${keyPropertyName}" value="${bg}${keyPropertyName}${ed}" placeholder="${field.comment}" size="20">
+            <input type="text" name="${keyPropertyName}" value="${bg}${keyPropertyName}${ed}!" placeholder="${field.comment}" size="20">
         </div>
 #end
 #end

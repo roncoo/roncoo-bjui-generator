@@ -12,7 +12,7 @@
 #elseif(${field.convert})
     		<p>
                 <label>${field.comment}：</label>
-                <input type="text" name="${keyPropertyName}" value="${bg}${keyPropertyName}${ed}" placeholder="${field.comment}" size="20" />
+                <input type="text" name="${keyPropertyName}" value="${bg}${keyPropertyName}${ed}!" placeholder="${field.comment}" size="20" />
             </p>
 #end
 #end
