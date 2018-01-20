@@ -57,12 +57,12 @@
 #if(${field.keyIdentityFlag})
 ## 主键不生成
 #elseif(${field.convert})
-                    <td>${bg}${field.propertyName}${ed}!</td>
+                    <td>${bg}${field.propertyName}!${ed}</td>
 #end
 #end
                     <td>
-                        <a title="查看" target="dialog" href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/view?id=${bean.id}" class="btnView">查看 </a>
-                        <a title="编辑" target="dialog" href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/edit?id=${bean.id}" class="btnEdit">修改 </a>
+                        <a title="查看" target="dialog" href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/view?id=${bean.id}" class="btnView">查看</a>
+                        <a title="编辑" target="dialog" href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/edit?id=${bean.id}" class="btnEdit">修改</a>
                         <a title="确定要删除吗？" target="ajaxTodo" href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/delete?id=${bean.id}" class="btnDel">删除</a>
                     </td>
                 </tr>

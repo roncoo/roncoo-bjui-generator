@@ -18,9 +18,10 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus</artifactId>
-			<version>2.1.2</version>
+			<artifactId>mybatis-plus-generate</artifactId>
+			<version>2.1.8</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>

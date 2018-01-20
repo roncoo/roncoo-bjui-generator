@@ -42,12 +42,12 @@
 #if(${field.keyIdentityFlag})
 ## 主键不生成
 #elseif(${field.convert})
-				<td>${bg}${field.propertyName}${ed}!</td>
+				<td>${bg}${field.propertyName}!${ed}</td>
 #end
 #end
 				<td>
-					<a href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/view?id=${bean.id}" class="btn btn-blue" data-toggle="dialog" data-id="#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end-view" data-options="{title:'查看', height:500}">查看 </a>
-					<a href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/edit?id=${bean.id}" class="btn btn-green" data-toggle="dialog" data-id="#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end-edit" data-options="{title:'修改', height:500}">修改 </a>
+					<a href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/view?id=${bean.id}" class="btn btn-blue" data-toggle="dialog" data-id="#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end-view" data-options="{title:'查看', height:500}">查看</a>
+					<a href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/edit?id=${bean.id}" class="btn btn-green" data-toggle="dialog" data-id="#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end-edit" data-options="{title:'修改', height:500}">修改</a>
 					<a href="${base}#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/delete?id=${bean.id}" class="btn btn-red" data-toggle="doajax" data-id="#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end-delete" data-confirm-msg="确定要删除吗？">删除</a>
 				</td>
 			</tr>
