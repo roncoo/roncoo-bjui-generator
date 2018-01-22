@@ -1,0 +1,15 @@
+package ${package.Base}.feign.web;
+
+import org.springframework.cloud.netflix.feign.FeignClient;
+
+import ${package.Base}.common.interfaces.web.Web${entity};
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+@FeignClient
+public interface IWeb${entity} extends Web${entity} {
+
+}

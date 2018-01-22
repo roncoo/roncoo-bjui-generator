@@ -1,0 +1,50 @@
+package ${package.Base}.service.controller.boss;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import ${package.Qo}.${entity}QO;
+import ${package.Vo}.${entity}VO;
+import ${package.Base}.common.interfaces.boss.Boss${entity};
+import ${package.Base}.service.biz.boss.Boss${entity}Biz;
+import ${superControllerClassPackage};
+import ${package.Page}.Page;
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+@RestController
+public class Boss${table.controllerName} extends ${superControllerClass} implements Boss${entity}{
+
+	@Autowired
+	private Boss${entity}Biz biz;
+	
+	@Override
+	public Page<${entity}VO> listForPage(@RequestBody ${entity}QO qo){
+		return biz.listForPage(qo);
+	}
+
+    @Override
+	public int save(@RequestBody ${entity}QO qo){
+		return biz.save(qo);
+	}
+
+    @Override	
+	public int deleteById(@RequestBody Long id){
+		return biz.deleteById(id);
+	}
+	
+    @Override	
+	public int updateById(@RequestBody ${entity}QO qo){
+		return biz.updateById(qo);
+	}
+	
+    @Override
+	public ${entity}VO getById(@RequestBody Long id){
+		return biz.getById(id);
+	}
+	
+}

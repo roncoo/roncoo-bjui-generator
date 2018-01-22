@@ -1,0 +1,15 @@
+package ${package.Base}.feign.boss;
+
+import org.springframework.cloud.netflix.feign.FeignClient;
+
+import ${package.Base}.common.interfaces.boss.Boss${entity};
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+@FeignClient
+public interface IBoss${entity} extends Boss${entity} {
+
+}

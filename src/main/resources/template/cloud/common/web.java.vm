@@ -1,0 +1,10 @@
+package ${package.Base}.common.interfaces.web;
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+public interface Web${entity} {
+    
+}

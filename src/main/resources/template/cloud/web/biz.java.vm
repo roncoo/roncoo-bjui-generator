@@ -1,0 +1,43 @@
+package ${package.Biz};
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import ${package.Qo}.${entity}QO;
+import ${package.Vo}.${entity}VO;
+import ${package.Base}.feign.boss.IBoss${entity};
+import com.roncoo.cloud.util.base.BaseBiz;
+import ${package.Page}.Page;
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+@Component
+public class ${entity}Biz extends BaseBiz{
+
+	@Autowired
+	private IBoss${entity} boss${entity};
+
+	public Page<${entity}VO> listForPage(${entity}QO qo) {
+        return boss${entity}.listForPage(qo);
+	}
+
+	public int save(${entity}QO qo) {
+		return boss${entity}.save(qo);
+	}
+
+	public int deleteById(Long id) {
+		return boss${entity}.deleteById(id);
+	}
+
+	public ${entity}VO getById(Long id) {
+		return boss${entity}.getById(id);
+	}
+
+	public int updateById(${entity}QO qo) {
+		return boss${entity}.updateById(qo);
+	}
+	
+}

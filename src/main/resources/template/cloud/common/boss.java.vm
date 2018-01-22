@@ -1,0 +1,32 @@
+package ${package.Base}.common.interfaces.boss;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import ${package.Qo}.${entity}QO;
+import ${package.Vo}.${entity}VO;
+import ${package.Page}.Page;
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+public interface Boss${entity} {
+	
+	@RequestMapping(value = "/boss#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/listForPage")
+	Page<${entity}VO> listForPage(@RequestBody ${entity}QO qo);
+	
+	@RequestMapping(value = "/boss#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/save")
+	int save(@RequestBody ${entity}QO qo);
+	
+	@RequestMapping(value = "/boss#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/deleteById")
+	int deleteById(@RequestBody Long id);
+	
+	@RequestMapping(value = "/boss#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/updateById")
+	int updateById(@RequestBody ${entity}QO qo);
+	
+	@RequestMapping(value = "/boss#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/getById")
+	${entity}VO getById(@RequestBody Long id);
+	
+}
