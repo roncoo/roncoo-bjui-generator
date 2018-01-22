@@ -37,28 +37,32 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  */
 public class MysqlGenerator_bjui {
 
-	private static final String[] TABLES = new String[] {};
+	private static final String[] TABLES = new String[] { "item", "item_supply", "merchant_info", "mobile_info", "order_supply", "order_trade", "order_trade_pay", "supply_info" };
+	//private static final String[] TABLES = new String[] { "area_info" };
 	private static final String AUTHOR = "wujing";
 
-	private static final boolean JAVA = true; // 是否生成java
-	private static final boolean FTL = true; // 是否生成ftl
+	private static final boolean JAVA_QV = true; // 是否生成java
+	private static final boolean JAVA_SC = false; // 是否生成java
+	private static final boolean FTL = false; // 是否生成ftl
 
 	// 包的根路径设置
-	private static final String PACKAGE_PATH = "com.roncoo.pay.boss";
-	private static final String PACKAGE_PATH_COMMON = "com.roncoo.pay.common";
+	private static final String PACKAGE_PATH = "com.roncoo.recharge.boss";
+	private static final String PACKAGE_PATH_DAO = "com.roncoo.recharge.common.dao";
+	private static final String PACKAGE_PATH_ENT = "com.roncoo.recharge.common.entity";
+	private static final String PACKAGE_PATH_PAGE = "com.roncoo.recharge.util.bjui";
 	private static final String MODULE_NAME = "admin";
-	private static final String SUPERCONTROLLERCLASS = "com.roncoo.pay.common.custom.base.BaseController";
+	private static final String SUPERCONTROLLERCLASS = "com.roncoo.recharge.util.base.BaseController";
 
 	// 文件保存的位置
-	private static final String OUTPUT_DIR = "D:/workspace/rc-pay/rc-pay-boss/";
+	private static final String OUTPUT_DIR = "D:/workspace/roncoo-recharge/roncoo-recharge-boss/";
 	private static final String OUTPUT_DIR_JAVA = "src/main/java/";
 	private static final String OUTPUT_DIR_FTL = "src/main/resources/templates/admin/";
 
 	// 数据库配置
 	private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
-	private static final String DB_USER_NAME = "root";
-	private static final String DB_PASSWORD = "";
-	private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/rc_os_pay?characterEncoding=utf8";
+	private static final String DB_USER_NAME = "roncoo";
+	private static final String DB_PASSWORD = "123456";
+	private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/rc_recharge?characterEncoding=utf8";
 
 	/**
 	 * 代码生成
@@ -99,28 +103,14 @@ public class MysqlGenerator_bjui {
 				this.getConfig().getPackageInfo().put("Ctl", PACKAGE_PATH + ".controller." + MODULE_NAME);
 				this.getConfig().getPackageInfo().put("Qo", PACKAGE_PATH + ".bean.qo");
 				this.getConfig().getPackageInfo().put("Vo", PACKAGE_PATH + ".bean.vo");
-				this.getConfig().getPackageInfo().put("Dao", PACKAGE_PATH_COMMON + ".dao");
-				this.getConfig().getPackageInfo().put("Ent", PACKAGE_PATH_COMMON + ".entity");
-				this.getConfig().getPackageInfo().put("Page", PACKAGE_PATH_COMMON + ".custom.bjui");
+				this.getConfig().getPackageInfo().put("Dao", PACKAGE_PATH_DAO);
+				this.getConfig().getPackageInfo().put("Ent", PACKAGE_PATH_ENT);
+				this.getConfig().getPackageInfo().put("Page", PACKAGE_PATH_PAGE);
 			}
 		};
 
 		List<FileOutConfig> list = new ArrayList<>();
-		if (JAVA) {
-			list.add(new FileOutConfig("/template/bjui/service.java.vm") {
-				// 自定义输出文件目录
-				@Override
-				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA + PACKAGE_PATH.replace(".", "/") + "/service/" + tableInfo.getEntityName() + "Service.java";
-				}
-			});
-			list.add(new FileOutConfig("/template/bjui/controller.java.vm") {
-				// 自定义输出文件目录
-				@Override
-				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA + PACKAGE_PATH.replace(".", "/") + "/controller/" + MODULE_NAME.replace(".", "/") + "/" + tableInfo.getEntityName() + "Controller.java";
-				}
-			});
+		if (JAVA_QV) {
 			list.add(new FileOutConfig("/template/bjui/qo.java.vm") {
 				// 自定义输出文件目录
 				@Override
@@ -133,6 +123,23 @@ public class MysqlGenerator_bjui {
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR + OUTPUT_DIR_JAVA + PACKAGE_PATH.replace(".", "/") + "/bean/vo/" + tableInfo.getEntityName() + "VO.java";
+				}
+			});
+		}
+		
+		if (JAVA_SC) {
+			list.add(new FileOutConfig("/template/bjui/service.java.vm") {
+				// 自定义输出文件目录
+				@Override
+				public String outputFile(TableInfo tableInfo) {
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA + PACKAGE_PATH.replace(".", "/") + "/service/" + tableInfo.getEntityName() + "Service.java";
+				}
+			});
+			list.add(new FileOutConfig("/template/bjui/controller.java.vm") {
+				// 自定义输出文件目录
+				@Override
+				public String outputFile(TableInfo tableInfo) {
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA + PACKAGE_PATH.replace(".", "/") + "/controller/" + MODULE_NAME.replace(".", "/") + "/" + tableInfo.getEntityName() + "Controller.java";
 				}
 			});
 		}
