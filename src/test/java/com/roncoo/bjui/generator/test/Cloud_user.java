@@ -35,7 +35,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  * 
  * @author wujing
  */
-public class MysqlGenerator_roncoo_cloud_order {
+public class Cloud_user {
 
 	private static final String[] TABLES = new String[] { };
 	private static final String AUTHOR = "wujing";
@@ -47,20 +47,20 @@ public class MysqlGenerator_roncoo_cloud_order {
 	private static final boolean FTL = true; // 是否生成ftl
 
 	// 包的根路径设置
-	private static final String PACKAGE_PATH = "com.roncoo.cloud.order";
-	private static final String PACKAGE_PATH_DAO = "com.roncoo.cloud.order.service.dao";
-	private static final String PACKAGE_PATH_ENT = "com.roncoo.cloud.order.common.bean.entity";
+	private static final String PACKAGE_PATH = "com.roncoo.cloud.user";
+	private static final String PACKAGE_PATH_DAO = "com.roncoo.cloud.user.service.dao";
+	private static final String PACKAGE_PATH_ENT = "com.roncoo.cloud.user.common.bean.entity";
 	private static final String PACKAGE_PATH_PAGE = "com.roncoo.cloud.util.base";
-	private static final String MODULE_NAME = "order";
+	private static final String MODULE_NAME = "user";
 	private static final String SUPERCONTROLLERCLASS = "com.roncoo.cloud.util.base.BaseController";
 
 	// 文件保存的位置
-	private static final String OUTPUT_DIR = "D:/workspace/roncoo-cloud/roncoo-cloud-order/";
-	private static final String OUTPUT_DIR_JAVA_COMMON = "roncoo-cloud-order-common/src/main/java/";
-	private static final String OUTPUT_DIR_JAVA_FEIGN = "roncoo-cloud-order-feign/src/main/java/";
-	private static final String OUTPUT_DIR_JAVA_SERVICE = "roncoo-cloud-order-service/src/main/java/";
+	private static final String OUTPUT_DIR = "D:/workspace/roncoo-cloud/roncoo-cloud-user/";
+	private static final String OUTPUT_DIR_JAVA_COMMON = "roncoo-cloud-user-common/src/main/java/";
+	private static final String OUTPUT_DIR_JAVA_FEIGN = "roncoo-cloud-user-feign/src/main/java/";
+	private static final String OUTPUT_DIR_JAVA_SERVICE = "roncoo-cloud-user-service/src/main/java/";
 	private static final String OUTPUT_DIR_JAVA_WEB = "D:/workspace/roncoo-cloud/roncoo-cloud-web-boss/src/main/java/";
-	private static final String OUTPUT_DIR_FTL = "D:/workspace/roncoo-cloud/roncoo-cloud-web-boss/src/main/resources/templates/order/";
+	private static final String OUTPUT_DIR_FTL = "D:/workspace/roncoo-cloud/roncoo-cloud-web-boss/src/main/resources/templates/user/";
 
 	// 数据库配置
 	private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
@@ -103,8 +103,8 @@ public class MysqlGenerator_roncoo_cloud_order {
 		InjectionConfig ic = new InjectionConfig() {
 			@Override
 			public void initMap() {
-				this.getConfig().getPackageInfo().put("Biz", "com.roncoo.cloud.web.boss.biz.order");
-				this.getConfig().getPackageInfo().put("Ctl", "com.roncoo.cloud.web.boss.controller.order");
+				this.getConfig().getPackageInfo().put("Biz", "com.roncoo.cloud.web.boss.biz.user");
+				this.getConfig().getPackageInfo().put("Ctl", "com.roncoo.cloud.web.boss.controller.user");
 				this.getConfig().getPackageInfo().put("Qo", PACKAGE_PATH + ".common.bean.qo");
 				this.getConfig().getPackageInfo().put("Vo", PACKAGE_PATH + ".common.bean.vo");
 				this.getConfig().getPackageInfo().put("Bo", PACKAGE_PATH + ".common.bean.bo");
@@ -219,14 +219,14 @@ public class MysqlGenerator_roncoo_cloud_order {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR_JAVA_WEB + "com.roncoo.cloud.web".replace(".", "/") + "/boss/biz/order/" + tableInfo.getEntityName() + "Biz.java";
+					return OUTPUT_DIR_JAVA_WEB + "com.roncoo.cloud.web".replace(".", "/") + "/boss/biz/user/" + tableInfo.getEntityName() + "Biz.java";
 				}
 			});
 			list.add(new FileOutConfig("/template/cloud/web/controller.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR_JAVA_WEB + "com.roncoo.cloud.web".replace(".", "/") + "/boss/controller/order/" + tableInfo.getEntityName() + "Controller.java";
+					return OUTPUT_DIR_JAVA_WEB + "com.roncoo.cloud.web".replace(".", "/") + "/boss/controller/user/" + tableInfo.getEntityName() + "Controller.java";
 				}
 			});
 			
