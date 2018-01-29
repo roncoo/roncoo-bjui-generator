@@ -215,14 +215,14 @@ public class Cloud_course {
 		}
 		
 		if (JAVA_WEB) {
-			list.add(new FileOutConfig("/template/cloud/web/biz.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/gateway/biz.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR_JAVA_WEB + "com.roncoo.cloud.web".replace(".", "/") + "/boss/biz/course/" + tableInfo.getEntityName() + "Biz.java";
 				}
 			});
-			list.add(new FileOutConfig("/template/cloud/web/controller.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/gateway/controller.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
