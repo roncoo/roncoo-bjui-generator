@@ -1,4 +1,4 @@
-package ${package.Qo};
+package ${package.Vo};
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -14,23 +14,16 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author ${author}
+ * @since ${date}
  */
 #if(${entityLombokModel})
 @Data
 @Accessors(chain = true)
 #end
-public class ${entity}QO implements Serializable {
+public class ${entity}VO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
-    /**
-     * 当前页
-     */
-    private int pageCurrent;
-    /**
-     * 每页记录数
-     */
-    private int pageSize;
+
 ## ----------  BEGIN 字段循环遍历  ----------
 #foreach($field in ${table.fields})
 #if(${field.keyFlag})
@@ -44,6 +37,7 @@ public class ${entity}QO implements Serializable {
     private ${field.propertyType} ${field.propertyName};
 #end
 ## ----------  END 字段循环遍历  ----------
+
 #if(!${entityLombokModel})
 #foreach($field in ${table.fields})
 #if(${field.propertyType.equals("boolean")})
@@ -51,9 +45,11 @@ public class ${entity}QO implements Serializable {
 #else
 #set($getprefix="get")
 #end
+
     public ${field.propertyType} ${getprefix}${field.capitalName}() {
         return ${field.propertyName};
     }
+
 #if(${entityBuilderModel})
     public ${entity} set${field.capitalName}(${field.propertyType} ${field.propertyName}) {
 #else
@@ -66,16 +62,18 @@ public class ${entity}QO implements Serializable {
     }
 #end
 #end
+
 #if(${entityColumnConstant})
 #foreach($field in ${table.fields})
     public static final String ${field.name.toUpperCase()} = "${field.name}";
 
 #end
 #end
+
 #if(!${entityLombokModel})
     @Override
     public String toString() {
-        return "${entity}QO{" +
+        return "${entity}VO{" +
 #foreach($field in ${table.fields})
 #if($!{velocityCount}==1)
             "${field.propertyName}=" + ${field.propertyName} +

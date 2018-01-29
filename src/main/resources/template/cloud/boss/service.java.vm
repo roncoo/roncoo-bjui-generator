@@ -1,0 +1,59 @@
+package ${package.Biz};
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import ${package.Qo}.${entity}QO;
+import ${package.Vo}.${entity}VO;
+import ${package.Page}.Page;
+import ${package.Page}.PageUtil;
+import ${package.Dao}.${entity}Dao;
+import ${package.Ent}.${entity};
+import ${package.Ent}.${entity}Example;
+import ${package.Ent}.${entity}Example.Criteria;
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Component
+public class ${entity}Service {
+
+	@Autowired
+	private ${entity}Dao dao;
+
+	public Page<${entity}VO> listForPage(${entity}QO qo) {
+	    ${entity}Example example = new ${entity}Example();
+	    Criteria c = example.createCriteria();
+	    example.setOrderByClause(" id desc ");
+        Page<${entity}> page = dao.listForPage(qo.getPageCurrent(), qo.getPageSize(), example);
+        return PageUtil.transform(page, ${entity}VO.class);
+	}
+
+	public int save(${entity}QO qo) {
+	    ${entity} record = new ${entity}();
+        BeanUtils.copyProperties(qo, record);
+		return dao.save(record);
+	}
+
+	public int deleteById(Long id) {
+		return dao.deleteById(id);
+	}
+
+	public ${entity}VO getById(Long id) {
+	    ${entity}VO vo = new ${entity}VO();
+	    ${entity} record = dao.getById(id);
+        BeanUtils.copyProperties(record, vo);
+		return vo;
+	}
+
+	public int updateById(${entity}QO qo) {
+	    ${entity} record = new ${entity}();
+        BeanUtils.copyProperties(qo, record);
+		return dao.updateById(record);
+	}
+	
+}

@@ -42,12 +42,12 @@ public class Cloud_boss {
 
 	private static final boolean JAVA_QV = true; // 是否生成java
 	private static final boolean JAVA_SC = true; // 是否生成java
-	private static final boolean FTL = true; // 是否生成ftl
+	private static final boolean FTL = false; // 是否生成ftl
 
 	// 包的根路径设置
 	private static final String PACKAGE_PATH = "com.roncoo.cloud.web.boss";
 	private static final String PACKAGE_PATH_DAO = "com.roncoo.cloud.web.boss.service.dao";
-	private static final String PACKAGE_PATH_ENT = "com.roncoo.cloud.web.boss.common.bean.entity";
+	private static final String PACKAGE_PATH_ENT = "com.roncoo.cloud.web.boss.service.dao.impl.mapper.entity";
 	private static final String PACKAGE_PATH_PAGE = "com.roncoo.cloud.util.base";
 	private static final String MODULE_NAME = "admin";
 	private static final String SUPERCONTROLLERCLASS = "com.roncoo.cloud.util.base.BaseController";
@@ -110,14 +110,14 @@ public class Cloud_boss {
 
 		List<FileOutConfig> list = new ArrayList<>();
 		if (JAVA_QV) {
-			list.add(new FileOutConfig("/template/bjui/qo.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/qo.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR + OUTPUT_DIR_JAVA + PACKAGE_PATH.replace(".", "/") + "/common/bean/qo/" + tableInfo.getEntityName() + "QO.java";
 				}
 			});
-			list.add(new FileOutConfig("/template/bjui/vo.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/vo.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
@@ -127,14 +127,14 @@ public class Cloud_boss {
 		}
 
 		if (JAVA_SC) {
-			list.add(new FileOutConfig("/template/bjui/service.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/service.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR + OUTPUT_DIR_JAVA + PACKAGE_PATH.replace(".", "/") + "/service/" + tableInfo.getEntityName() + "Service.java";
 				}
 			});
-			list.add(new FileOutConfig("/template/bjui/controller.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/controller.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
@@ -144,28 +144,28 @@ public class Cloud_boss {
 		}
 
 		if (FTL) {
-			list.add(new FileOutConfig("/template/bjui/ftl/list.ftl.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/ftl/list.ftl.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR + OUTPUT_DIR_FTL + tableInfo.getEntityPath() + "/list.ftl";
 				}
 			});
-			list.add(new FileOutConfig("/template/bjui/ftl/add.ftl.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/ftl/add.ftl.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR + OUTPUT_DIR_FTL + tableInfo.getEntityPath() + "/add.ftl";
 				}
 			});
-			list.add(new FileOutConfig("/template/bjui/ftl/edit.ftl.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/ftl/edit.ftl.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR + OUTPUT_DIR_FTL + tableInfo.getEntityPath() + "/edit.ftl";
 				}
 			});
-			list.add(new FileOutConfig("/template/bjui/ftl/view.ftl.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/ftl/view.ftl.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
