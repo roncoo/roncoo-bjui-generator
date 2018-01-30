@@ -9,9 +9,7 @@ import lombok.experimental.Accessors;
 #end
 
 /**
- * <p>
  * $!{table.comment}
- * </p>
  *
  * @author ${author}
  */
