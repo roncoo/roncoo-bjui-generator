@@ -64,9 +64,9 @@ public class Cloud_course {
 
 	// 数据库配置
 	private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
-	private static final String DB_course_NAME = "roncoo";
-	private static final String DB_PASSWORD = "123456";
-	private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/rc_recharge?characterEncoding=utf8";
+	private static final String DB_course_NAME = "root";
+	private static final String DB_PASSWORD = "www.roncoo.com";
+	private static final String DB_URL = "jdbc:mysql://192.168.1.216:3306/cloud_course?characterEncoding=utf8";
 
 	/**
 	 * 代码生成
@@ -152,7 +152,7 @@ public class Cloud_course {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_COMMON + PACKAGE_PATH.replace(".", "/") + "/common/interfaces/boss/Boss" + tableInfo.getEntityName() + ".java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_COMMON + PACKAGE_PATH.replace(".", "/") + "/common/interfaces/web/Boss" + tableInfo.getEntityName() + ".java";
 				}
 			});
 			
@@ -160,7 +160,7 @@ public class Cloud_course {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_COMMON + PACKAGE_PATH.replace(".", "/") + "/common/interfaces/web/Web" + tableInfo.getEntityName() + ".java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_COMMON + PACKAGE_PATH.replace(".", "/") + "/common/interfaces/gateway/Api" + tableInfo.getEntityName() + ".java";
 				}
 			});
 		}
