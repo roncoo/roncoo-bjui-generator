@@ -148,7 +148,7 @@ public class Cloud_course {
 			});
 			
 			
-			list.add(new FileOutConfig("/template/cloud/common/boss.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/common/interfaces/boss.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
@@ -156,7 +156,7 @@ public class Cloud_course {
 				}
 			});
 			
-			list.add(new FileOutConfig("/template/cloud/common/web.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/common/interfaces/api.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
@@ -170,14 +170,14 @@ public class Cloud_course {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_FEIGN + PACKAGE_PATH.replace(".", "/") + "/feign/boss/" + "IBoss" + tableInfo.getEntityName() + ".java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_FEIGN + PACKAGE_PATH.replace(".", "/") + "/feign/web/" + "IBoss" + tableInfo.getEntityName() + ".java";
 				}
 			});
-			list.add(new FileOutConfig("/template/cloud/feign/web.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/feign/api.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_FEIGN + PACKAGE_PATH.replace(".", "/") + "/feign/web/" + "IWeb" + tableInfo.getEntityName() + ".java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_FEIGN + PACKAGE_PATH.replace(".", "/") + "/feign/gateway/" + "IApi" + tableInfo.getEntityName() + ".java";
 				}
 			});
 		}
@@ -187,42 +187,42 @@ public class Cloud_course {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/biz/boss/Boss" + tableInfo.getEntityName() + "Biz.java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/biz/web/Boss" + tableInfo.getEntityName() + "Biz.java";
 				}
 			});
 			list.add(new FileOutConfig("/template/cloud/service/boss.controller.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/controller/boss/Boss" + tableInfo.getEntityName() + "Controller.java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/controller/web/Boss" + tableInfo.getEntityName() + "Controller.java";
 				}
 			});
 			
-			list.add(new FileOutConfig("/template/cloud/service/web.biz.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/service/api.biz.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/biz/web/Web" + tableInfo.getEntityName() + "Biz.java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/biz/gateway/Api" + tableInfo.getEntityName() + "Biz.java";
 				}
 			});
-			list.add(new FileOutConfig("/template/cloud/service/web.controller.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/service/api.controller.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
-					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/controller/web/Web" + tableInfo.getEntityName() + "Controller.java";
+					return OUTPUT_DIR + OUTPUT_DIR_JAVA_SERVICE + PACKAGE_PATH.replace(".", "/") + "/service/controller/gateway/Api" + tableInfo.getEntityName() + "Controller.java";
 				}
 			});
 		}
 		
 		if (JAVA_WEB) {
-			list.add(new FileOutConfig("/template/cloud/gateway/biz.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/biz.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					return OUTPUT_DIR_JAVA_WEB + "com.roncoo.cloud.web".replace(".", "/") + "/boss/biz/course/" + tableInfo.getEntityName() + "Biz.java";
 				}
 			});
-			list.add(new FileOutConfig("/template/cloud/gateway/controller.java.vm") {
+			list.add(new FileOutConfig("/template/cloud/boss/controller.java.vm") {
 				// 自定义输出文件目录
 				@Override
 				public String outputFile(TableInfo tableInfo) {

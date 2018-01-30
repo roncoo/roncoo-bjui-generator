@@ -1,4 +1,4 @@
-package ${package.Base}.service.controller.boss;
+package ${package.Base}.service.controller.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import ${package.Qo}.${entity}QO;
 import ${package.Vo}.${entity}VO;
-import ${package.Base}.common.interfaces.boss.Boss${entity};
-import ${package.Base}.service.biz.boss.Boss${entity}Biz;
+import ${package.Base}.common.interfaces.web.Boss${entity};
+import ${package.Base}.service.biz.web.Boss${entity}Biz;
 import ${superControllerClassPackage};
 import ${package.Page}.Page;
 

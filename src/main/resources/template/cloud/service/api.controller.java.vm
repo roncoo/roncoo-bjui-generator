@@ -1,0 +1,21 @@
+package ${package.Base}.service.controller.gateway;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import ${package.Base}.common.interfaces.gateway.Api${entity};
+import ${package.Base}.service.biz.gateway.Api${entity}Biz;
+import ${superControllerClassPackage};
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+@RestController
+public class Api${table.controllerName} extends ${superControllerClass} implements Api${entity}{
+
+    @Autowired
+    private Api${entity}Biz biz;
+    
+}

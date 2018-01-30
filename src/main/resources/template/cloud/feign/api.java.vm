@@ -1,8 +1,8 @@
-package ${package.Base}.feign.web;
+package ${package.Base}.feign.gateway;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 
-import ${package.Base}.common.interfaces.web.Web${entity};
+import ${package.Base}.common.interfaces.gateway.Api${entity};
 
 /**
  * $!{table.comment} 
@@ -10,6 +10,6 @@ import ${package.Base}.common.interfaces.web.Web${entity};
  * @author ${author}
  */
 @FeignClient
-public interface IWeb${entity} extends Web${entity} {
+public interface IApi${entity} extends Api${entity} {
 
 }

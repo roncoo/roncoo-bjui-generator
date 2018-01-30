@@ -1,10 +1,10 @@
-package ${package.Base}.common.interfaces.web;
+package ${package.Base}.common.interfaces.gateway;
 
 /**
  * $!{table.comment} 
  *
  * @author ${author}
  */
-public interface Web${entity} {
+public interface Api${entity} {
     
 }

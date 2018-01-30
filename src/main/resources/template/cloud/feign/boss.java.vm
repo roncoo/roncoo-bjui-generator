@@ -1,8 +1,8 @@
-package ${package.Base}.feign.boss;
+package ${package.Base}.feign.web;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 
-import ${package.Base}.common.interfaces.boss.Boss${entity};
+import ${package.Base}.common.interfaces.web.Boss${entity};
 
 /**
  * $!{table.comment} 

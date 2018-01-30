@@ -1,4 +1,4 @@
-package ${package.Base}.service.biz.boss;
+package ${package.Base}.service.biz.web;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,7 @@ public class Boss${entity}Biz {
 	public int save(${entity}QO qo) {
 	    ${entity} record = new ${entity}();
         BeanUtils.copyProperties(qo, record);
-		return dao.insert(record);
+		return dao.save(record);
 	}
 
 	public int deleteById(Long id) {
@@ -44,7 +44,7 @@ public class Boss${entity}Biz {
 
 	public ${entity}VO getById(Long id) {
 	    ${entity}VO vo = new ${entity}VO();
-	    ${entity} record = dao.selectById(id);
+	    ${entity} record = dao.getById(id);
         BeanUtils.copyProperties(record, vo);
 		return vo;
 	}

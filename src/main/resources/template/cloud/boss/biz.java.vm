@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import ${package.Qo}.${entity}QO;
 import ${package.Vo}.${entity}VO;
-import ${package.Base}.feign.boss.IBoss${entity};
+import ${package.Base}.feign.web.IBoss${entity};
 import com.roncoo.cloud.util.base.BaseBiz;
 import ${package.Page}.Page;
 

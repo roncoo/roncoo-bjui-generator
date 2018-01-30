@@ -1,0 +1,13 @@
+package ${package.Base}.service.biz.gateway;
+
+import org.springframework.stereotype.Component;
+
+/**
+ * $!{table.comment} 
+ *
+ * @author ${author}
+ */
+@Component
+public class Api${entity}Biz {
+
+}

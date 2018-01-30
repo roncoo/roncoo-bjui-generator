@@ -1,4 +1,4 @@
-package ${package.Base}.common.interfaces.boss;
+package ${package.Base}.common.interfaces.web;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
