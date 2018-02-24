@@ -40,11 +40,11 @@ public class Cloud_user {
 	private static final String[] TABLES = new String[] { };
 	private static final String AUTHOR = "wujing";
 
-	private static final boolean JAVA_COMMON = true; // 是否生成java
+	private static final boolean JAVA_COMMON = false; // 是否生成java
 	private static final boolean JAVA_FEIGN = true; // 是否生成java
-	private static final boolean JAVA_SERIVICE = true; // 是否生成java
-	private static final boolean JAVA_WEB = true; // 是否生成java
-	private static final boolean FTL = true; // 是否生成ftl
+	private static final boolean JAVA_SERIVICE = false; // 是否生成java
+	private static final boolean JAVA_WEB = false; // 是否生成java
+	private static final boolean FTL = false; // 是否生成ftl
 
 	// 包的根路径设置
 	private static final String PACKAGE_PATH = "com.roncoo.cloud.user";

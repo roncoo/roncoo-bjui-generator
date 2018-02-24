@@ -9,7 +9,7 @@ import ${package.Base}.common.interfaces.gateway.Api${entity};
  *
  * @author ${author}
  */
-@FeignClient
+@FeignClient(value = "roncoo-cloud-user-service")
 public interface IApi${entity} extends Api${entity} {
 
 }

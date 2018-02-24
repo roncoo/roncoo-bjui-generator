@@ -9,7 +9,7 @@ import ${package.Base}.common.interfaces.web.Boss${entity};
  *
  * @author ${author}
  */
-@FeignClient
+@FeignClient(value = "roncoo-cloud-user-service")
 public interface IBoss${entity} extends Boss${entity} {
 
 }
