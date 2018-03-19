@@ -59,14 +59,12 @@ public class ${entity}VO implements Serializable {
     }
 #end
 #end
-
 #if(${entityColumnConstant})
 #foreach($field in ${table.fields})
     public static final String ${field.name.toUpperCase()} = "${field.name}";
 
 #end
 #end
-
 #if(!${entityLombokModel})
     @Override
     public String toString() {

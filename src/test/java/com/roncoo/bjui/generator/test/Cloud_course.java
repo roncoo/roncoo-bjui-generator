@@ -37,11 +37,11 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  */
 public class Cloud_course {
 
-	private static final String[] TABLES = new String[] { };
+	private static final String[] TABLES = new String[] { "course_info" ,"course_info_audit"};
 	private static final String AUTHOR = "wujing";
 
-	private static final boolean JAVA_COMMON = false; // 是否生成java
-	private static final boolean JAVA_FEIGN = true; // 是否生成java
+	private static final boolean JAVA_COMMON = true; // 是否生成java
+	private static final boolean JAVA_FEIGN = false; // 是否生成java
 	private static final boolean JAVA_SERIVICE = false; // 是否生成java
 	private static final boolean JAVA_WEB = false; // 是否生成java
 	private static final boolean FTL = false; // 是否生成ftl
@@ -146,8 +146,9 @@ public class Cloud_course {
 					return OUTPUT_DIR + OUTPUT_DIR_JAVA_COMMON + PACKAGE_PATH.replace(".", "/") + "/common/bean/dto/" + tableInfo.getEntityName() + "DTO.java";
 				}
 			});
-			
-			
+		}
+		
+		if (JAVA_FEIGN) {
 			list.add(new FileOutConfig("/template/cloud/common/interfaces/boss.java.vm") {
 				// 自定义输出文件目录
 				@Override
@@ -163,9 +164,7 @@ public class Cloud_course {
 					return OUTPUT_DIR + OUTPUT_DIR_JAVA_COMMON + PACKAGE_PATH.replace(".", "/") + "/common/interfaces/gateway/Api" + tableInfo.getEntityName() + ".java";
 				}
 			});
-		}
-		
-		if (JAVA_FEIGN) {
+			
 			list.add(new FileOutConfig("/template/cloud/feign/boss.java.vm") {
 				// 自定义输出文件目录
 				@Override

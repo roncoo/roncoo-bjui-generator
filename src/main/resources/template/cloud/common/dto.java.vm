@@ -34,7 +34,6 @@ public class ${entity}DTO implements Serializable {
     private ${field.propertyType} ${field.propertyName};
 #end
 ## ----------  END 字段循环遍历  ----------
-
 #if(!${entityLombokModel})
 #foreach($field in ${table.fields})
 #if(${field.propertyType.equals("boolean")})
@@ -42,11 +41,9 @@ public class ${entity}DTO implements Serializable {
 #else
 #set($getprefix="get")
 #end
-
     public ${field.propertyType} ${getprefix}${field.capitalName}() {
         return ${field.propertyName};
     }
-
 #if(${entityBuilderModel})
     public ${entity} set${field.capitalName}(${field.propertyType} ${field.propertyName}) {
 #else
@@ -59,14 +56,12 @@ public class ${entity}DTO implements Serializable {
     }
 #end
 #end
-
 #if(${entityColumnConstant})
 #foreach($field in ${table.fields})
     public static final String ${field.name.toUpperCase()} = "${field.name}";
 
 #end
 #end
-
 #if(!${entityLombokModel})
     @Override
     public String toString() {
